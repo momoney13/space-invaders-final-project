@@ -7,8 +7,8 @@ class Scene2 extends Phaser.Scene{
         //this.background = this.add.image(0,0, "background");
         this.background = this.add.tileSprite(0,0, config.width, config.height, "background");
         this.background.setOrigin(0,0);
-
-        //this.ship1 = this.add.image(128 - 50, 136, "ship");
+ 
+         //this.ship1 = this.add.image(128 - 50, 136, "ship");
         this.ship1 = this.add.sprite(config.width/2 - 50, config.height/2, "ship");
         this.ship2 = this.add.sprite(config.width/2, config.height/2, "ship2");
         this.ship3 = this.add.sprite(config.width/2 + 50, config.height/2, "ship3");
