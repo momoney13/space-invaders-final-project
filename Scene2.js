@@ -76,7 +76,7 @@ class Scene2 extends Phaser.Scene {
         graphics.fillPath();
         this.score = 0;
         this.scoreLabel = this.add.bitmapText(10, 5, "pixelFont", "SCORE ", 16);
-        
+
         this.lives = 3;
         this.livesLabel = this.add.bitmapText(10, 225, "pixelFont", "LIVES ", 16);
         this.livesLabel.text = "LIVES " + this.lives;
@@ -85,22 +85,26 @@ class Scene2 extends Phaser.Scene {
         powerUp.disableBody(true, true);
     }
     hurtPlayer(player, enemy) {
-        this.lives -=1;
-        this.resetShipPos(enemy);
+        this.lives -= 1;
+        if (this.lives > 0) {
+            this.resetShipPos(enemy);
 
-        if (this.player.alpha < 1) {
-            return;
+            if (this.player.alpha < 1) {
+                return;
+            }
+
+            var explosion = new Explosion(this, player.x, player.y);
+            player.disableBody(true, true);
+            //this.resetPlayer();
+            this.time.addEvent({
+                delay: 1000,
+                callback: this.resetPlayer,
+                callbackScope: this,
+                loop: false
+            });
+        }else{
+            UpdateScore(this.score);
         }
-
-        var explosion = new Explosion(this, player.x, player.y);
-        player.disableBody(true, true);
-        //this.resetPlayer();
-        this.time.addEvent({
-            delay: 1000,
-            callback: this.resetPlayer,
-            callbackScope: this,
-            loop: false
-        });
     }
     hitEnemy(projectile, enemy) {
         var explosion = new Explosion(this, enemy.x, enemy.y);
