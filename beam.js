@@ -1,5 +1,5 @@
-class Beam extends Phaser.GameObjects.Sprite{
-    constructor(scene){
+class Beam extends Phaser.GameObjects.Sprite {
+    constructor(scene) {
 
         var x = scene.player.x;
         var y = scene.player.y - 16;
@@ -12,8 +12,8 @@ class Beam extends Phaser.GameObjects.Sprite{
 
         scene.projectiles.add(this);
     }
-    update(){
-        if(this.y < 32 ){
+    update() {
+        if (this.y < 32) {
             this.destroy();
         }
     }
