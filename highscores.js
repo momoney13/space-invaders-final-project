@@ -25,31 +25,33 @@ function UpdateScore(score) {
     if (typeof (Storage) !== "undefined") {
         var current = parseInt(score);
         var scores = false;
-        var player = prompt("Please enter your name","")
-        if (localStorage["high-scores"]) {
+        var player = prompt("Please enter your name", "")
+        if (player != null) {
+            if (localStorage["high-scores"]) {
 
-            scores = JSON.parse(localStorage["high-scores"]);
-            scores = scores.sort(function (a, b) { return parseInt(b) - parseInt(a) });
+                scores = JSON.parse(localStorage["high-scores"]);
+                scores = scores.sort(function (a, b) { return parseInt(b) - parseInt(a) });
 
-            for (var i = 0; i < 10; i++) {
-                var s = parseInt(scores[i]);
+                for (var i = 0; i < 10; i++) {
+                    var s = parseInt(scores[i]);
 
-                var val = (!isNaN(s) ? s : 0);
-                if (current > val) {
-                    val = current;
-                    scores.splice(i, 0, player + "     " + parseInt(current));
-                    break;
+                    var val = (!isNaN(s) ? s : 0);
+                    if (current > val) {
+                        val = current;
+                        scores.splice(i, 0, player + "     " + parseInt(current));
+                        break;
+                    }
                 }
+
+                scores.length = 10;
+                localStorage["high-scores"] = JSON.stringify(scores);
+
+            } else {
+                var scores = new Array();
+                scores[0] = current;
+                localStorage["high-scores"] = JSON.stringify(scores);
             }
-
-            scores.length = 10;
-            localStorage["high-scores"] = JSON.stringify(scores);
-
-        } else {
-            var scores = new Array();
-            scores[0] = current;
-            localStorage["high-scores"] = JSON.stringify(scores);
+            HighScores();
         }
-        HighScores();
     }
 }
