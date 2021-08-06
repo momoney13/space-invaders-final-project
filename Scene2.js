@@ -191,5 +191,10 @@ class Scene2 extends Phaser.Scene {
         }
         return stringNumber;
     }
-
+    logReset(event) {
+        log.textContent = `Game reset! `;
+      }
+      
+      form = document.getElementById('form');
+     log = document.getElementById('log');
 }
