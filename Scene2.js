@@ -5,13 +5,13 @@ class Scene2 extends Phaser.Scene {
 
     create() {
         //this.background = this.add.image(0,0, "background");
-        this.background = this.add.tileSprite(0, 0, config.width, config.height, "background");
+        this.background = this.add.tileSprite(0, 0, config.scale.width, config.scale.height, "background");
         this.background.setOrigin(0, 0);
 
         //this.ship1 = this.add.image(128 - 50, 136, "ship");
-        this.ship1 = this.add.sprite(config.width / 2 - 50, config.height / 2, "ship");
-        this.ship2 = this.add.sprite(config.width / 2, config.height / 2, "ship2");
-        this.ship3 = this.add.sprite(config.width / 2 + 50, config.height / 2, "ship3");
+        this.ship1 = this.add.sprite(config.scale.width / 2 - 50, config.scale.height / 2, "ship");
+        this.ship2 = this.add.sprite(config.scale.width / 2, config.scale.height / 2, "ship2");
+        this.ship3 = this.add.sprite(config.scale.width / 2 + 50, config.scale.height / 2, "ship3");
 
         this.enemies = this.physics.add.group();
         this.enemies.add(this.ship1);
@@ -37,7 +37,7 @@ class Scene2 extends Phaser.Scene {
         for (var i = 0; i <= maxObjects; i++) {
             var powerUp = this.physics.add.sprite(16, 16, "power-up");
             this.powerUps.add(powerUp);
-            powerUp.setRandomPosition(0, 0, game.config.width, game.config.height);
+            powerUp.setRandomPosition(0, 0, game.config.scale.width, game.config.scale.height);
 
             if (Math.random() > 0.5) {
                 powerUp.play("red");
@@ -50,7 +50,7 @@ class Scene2 extends Phaser.Scene {
             powerUp.setBounce(1);
         }
 
-        this.player = this.physics.add.sprite(config.width / 2 - 8, config.height - 64, "player");
+        this.player = this.physics.add.sprite(config.scale.width / 2 - 8, config.scale.height - 64, "player");
         this.player.play("thrust");
         this.cursorKeys = this.input.keyboard.createCursorKeys();
         this.player.setCollideWorldBounds(true);
@@ -103,7 +103,7 @@ class Scene2 extends Phaser.Scene {
                 callbackScope: this,
                 loop: false
             });
-        }else{
+        } else {
             UpdateScore(this.score);
         }
     }
@@ -117,14 +117,14 @@ class Scene2 extends Phaser.Scene {
     }
     moveShip(ship, speed) {
         ship.y += speed;
-        if (ship.y > config.height) {
+        if (ship.y > config.scale.height) {
             this.resetShipPos(ship);
         }
     }
 
     resetShipPos(ship) {
         ship.y = 0;
-        var randomX = Phaser.Math.Between(0, config.width);
+        var randomX = Phaser.Math.Between(0, config.scale.width);
         ship.x = randomX;
     }
 
@@ -133,14 +133,14 @@ class Scene2 extends Phaser.Scene {
         gameObject.play("explode");
     }
     resetPlayer() {
-        var x = config.width / 2 - 8;
-        var y = config.height + 64;
+        var x = config.scale.width / 2 - 8;
+        var y = config.scale.height + 64;
         this.player.enableBody(true, x, y, true, true);
         this.player.alpha = 0.5;
 
         var tween = this.tweens.add({
             targets: this.player,
-            y: config.height - 64,
+            y: config.scale.height - 64,
             ease: 'Power1',
             duration: 1500,
             repeat: 0,
