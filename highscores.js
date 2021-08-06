@@ -1,5 +1,5 @@
-var game = document.querySelector("section#game");
-var high_scores = game.querySelector("section#game ol.high-scores");
+var gameSection = document.querySelector("section#game");
+var high_scores = gameSection.querySelector("section#game ol.high-scores");
 function HighScores() {
     if (typeof (Storage) !== "undefined") {
         var scores = false;
