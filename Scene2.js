@@ -37,7 +37,7 @@ class Scene2 extends Phaser.Scene {
         for (var i = 0; i <= maxObjects; i++) {
             var powerUp = this.physics.add.sprite(16, 16, "power-up");
             this.powerUps.add(powerUp);
-            powerUp.setRandomPosition(0, 0, game.config.scale.width, game.config.scale.height);
+            powerUp.setRandomPosition(0, 0, game.scale.width, game.scale.height);
 
             if (Math.random() > 0.5) {
                 powerUp.play("red");
@@ -68,8 +68,8 @@ class Scene2 extends Phaser.Scene {
         graphics.fillStyle(0x000000, 1);
         graphics.beginPath();
         graphics.moveTo(0, 0);
-        graphics.lineTo(config.width, 0);
-        graphics.lineTo(config.width, 20);
+        graphics.lineTo(config.scale.width, 0);
+        graphics.lineTo(config.scale.width, 20);
         graphics.lineTo(0, 20);
         graphics.lineTo(0, 0);
         graphics.closePath();
