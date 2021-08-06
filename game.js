@@ -4,7 +4,7 @@ var gameSettings = {
 var config = {
     backgroundColor: 0x000000,
     scale:{
-        mode: Phaser.Scale.FIT,
+        mode: Phaser.Scale.RESIZE,
         autoCenter:Phaser.Scale.CENTER_BOTH,
         width: '100%',
         height: '100%'

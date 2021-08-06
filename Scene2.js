@@ -76,7 +76,9 @@ class Scene2 extends Phaser.Scene {
         graphics.fillPath();
         this.score = 0;
         this.scoreLabel = this.add.bitmapText(10, 5, "pixelFont", "SCORE ", 16);
-
+        var stateText = game.add.text(game.world.centerX, game.world.centerY, ' ', { font: '84px Arial', fill: '#fff' });
+        stateText.anchor.setTo(0.5, 0.5);
+        stateText.visible = false;
         this.lives = 3;
         this.livesLabel = this.add.bitmapText(210, 5, "pixelFont", "LIVES ", 16);
         this.livesLabel.text = "LIVES " + this.lives;
@@ -103,7 +105,7 @@ class Scene2 extends Phaser.Scene {
                 callbackScope: this,
                 loop: false
             });
-        }else{
+        } else {
             UpdateScore(this.score);
         }
     }
