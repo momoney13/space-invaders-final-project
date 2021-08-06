@@ -78,7 +78,7 @@ class Scene2 extends Phaser.Scene {
         this.scoreLabel = this.add.bitmapText(10, 5, "pixelFont", "SCORE ", 16);
 
         this.lives = 3;
-        this.livesLabel = this.add.bitmapText(10, 225, "pixelFont", "LIVES ", 16);
+        this.livesLabel = this.add.bitmapText(210, 5, "pixelFont", "LIVES ", 16);
         this.livesLabel.text = "LIVES " + this.lives;
     }
     pickPowerUp(player, powerUp) {
