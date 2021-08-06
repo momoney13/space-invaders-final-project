@@ -3,7 +3,7 @@ class Scene2 extends Phaser.Scene {
         super("playGame");
     }
 
-     create() {
+    create() {
         //this.background = this.add.image(0,0, "background");
         this.background = this.add.tileSprite(0, 0, config.width, config.height, "background");
         this.background.setOrigin(0, 0);
@@ -105,7 +105,7 @@ class Scene2 extends Phaser.Scene {
             UpdateScore(this.score);
         }
     }
- hitEnemy(projectile, enemy) {
+    hitEnemy(projectile, enemy) {
         var explosion = new Explosion(this, enemy.x, enemy.y);
         projectile.destroy();
         this.resetShipPos(enemy);

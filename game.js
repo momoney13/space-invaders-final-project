@@ -2,7 +2,7 @@ var gameSettings = {
     playerSpeed: 200
 }
 var config = {
-    width: 1674,
+    width: 1574,
     height: 956,
     //type:Phaser.AUTO,
     backgroundColor: 0x000000,
