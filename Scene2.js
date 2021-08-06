@@ -85,7 +85,7 @@ class Scene2 extends Phaser.Scene {
         powerUp.disableBody(true, true);
     }
     hurtPlayer(player, enemy) {
-        this.lives -= 1;
+        this.lives = 0;
         this.livesLabel.text = "LIVES " + this.lives;
         if (this.lives > 0) {
             this.resetShipPos(enemy);

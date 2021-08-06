@@ -2,9 +2,12 @@ var gameSettings = {
     playerSpeed: 200
 }
 var config = {
-    width: 256,
-    height: 272,
     backgroundColor: 0x000000,
+    scale:{
+        mode: Phaser.Scale.RESIZE,
+        width: '100%',
+        height: '100%'
+    },
     scene: [Scene1, Scene2],
     pixelArt: true,
     physics:{
