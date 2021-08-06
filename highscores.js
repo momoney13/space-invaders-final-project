@@ -20,8 +20,10 @@ function HighScores() {
     } else {
         high_scores.style.display = "none";
     }
+    gameSection.style.display = "none";
 }
 function UpdateScore(score) {
+    gameSection.style.display = "block";
     if (typeof (Storage) !== "undefined") {
         var current = parseInt(score);
         var scores = false;
