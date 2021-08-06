@@ -143,7 +143,7 @@ class Scene2 extends Phaser.Scene {
             y: config.height - 64,
             ease: 'Power1',
             duration: 1500,
-            repeat: 1,
+            repeat: 0,
             onComplete: function () {
                 this.player.alpha = 1;
             },
