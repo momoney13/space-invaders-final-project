@@ -6,14 +6,14 @@ section#game {
     font-family: "arial,sans-serif";
 }
 
-/* section#game .start{
+section#game .start{
     display: block;
     padding-top: 50%;
     margin: 0 auto 0 auto;
     text-align: center;
     width: 50%;
     cursor: pointer;
-} */
+}
 
 section#game .start .high-scores{
     text-align: left;
