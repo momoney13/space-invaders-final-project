@@ -1,3 +1,4 @@
+var game = document.querySelector("section#game");
 var high_scores = game.querySelector("section#game ol.high-scores");
 function HighScores() {
     if (typeof (Storage) !== "undefined") {
@@ -51,6 +52,5 @@ function UpdateScore(score) {
             }
             HighScores();
         }
-        Scene2.create()
     }
 }
