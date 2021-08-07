@@ -1,6 +1,5 @@
 var gameSection = document.getElementById("game");
-var start = gameSection.getElementsByClassName("start");
-var high_scores = start[0];
+var high_scores = document.getElementsByClassName("high-scores");
 function HighScores() {
     if (typeof (Storage) !== "undefined") {
         var scores = false;
