@@ -1,4 +1,5 @@
 section#game {
+    display:none;
     overflow: hidden;
     position: relative;
     color: #ffffff;
