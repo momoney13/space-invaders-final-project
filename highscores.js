@@ -1,6 +1,5 @@
-var gameSection = document.getElementById("game");
-var high_scores = document.getElementsByClassName("high-scores");
 function HighScores() {
+    var high_scores = document.getElementsByClassName("high-scores");
     if (typeof (Storage) !== "undefined") {
         var scores = false;
         if (localStorage["high-scores"]) {
@@ -22,6 +21,7 @@ function HighScores() {
     gameSection.style.display = "none";
 }
 function UpdateScore(score) {
+    var gameSection = document.getElementById("game");
     gameSection.style.display = "block";
     if (typeof (Storage) !== "undefined") {
         var current = parseInt(score);
