@@ -1,5 +1,5 @@
 function HighScores() {
-    var high_scores = document.getElementsById("high-scores");
+    var high_scores = document.getElementById("high-scores");
     if (typeof (Storage) !== "undefined") {
         var scores = false;
         if (localStorage["high-scores"]) {
