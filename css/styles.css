@@ -2,7 +2,6 @@ section#game {
     display: none;
     overflow: hidden;
     position: relative;
-    color: #ffffff;
     font-size: 30px;
     font-family: "arial,sans-serif";
 }
