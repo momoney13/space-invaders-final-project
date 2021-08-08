@@ -1,5 +1,5 @@
 section#game {
-    display:none;
+    display: none;
     overflow: hidden;
     position: relative;
     color: #ffffff;
@@ -7,7 +7,7 @@ section#game {
     font-family: "arial,sans-serif";
 }
 
-section#game .start{
+section#game .start {
     display: block;
     padding-top: 50%;
     margin: 0 auto 0 auto;
@@ -16,6 +16,7 @@ section#game .start{
     cursor: pointer;
 }
 
-section#game .start .high-scores{
+section#game .start .high-scores {
     text-align: left;
+    display: none;
 }
