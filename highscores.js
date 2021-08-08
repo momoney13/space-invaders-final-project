@@ -1,4 +1,4 @@
-function HighScores() {
+function HighScores(gameSection) {
     var high_scores = document.getElementById("high-scores");
     if (typeof (Storage) !== "undefined") {
         var scores = false;
@@ -52,7 +52,7 @@ function UpdateScore(score) {
                 scores[0] = current;
                 localStorage["high-scores"] = JSON.stringify(scores);
             }
-            HighScores();
+            HighScores(gameSection);
         }
     }
 }
