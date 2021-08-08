@@ -39,7 +39,7 @@ function UpdateScore(score) {
                     var val = (!isNaN(s) ? s : 0);
                     if (current > val) {
                         val = current;
-                        scores.splice(i, 0, player + "     " + parseInt(current));
+                        scores.splice(i, 0, player + "\t\t" + parseInt(current));
                         break;
                     }
                 }
