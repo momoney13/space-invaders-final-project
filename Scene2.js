@@ -74,6 +74,9 @@ class Scene2 extends Phaser.Scene {
         graphics.lineTo(0, 0);
         graphics.closePath();
         graphics.fillPath();
+        this.resetLivesAndScore()
+    }
+    resetLivesAndScore(){
         this.score = 0;
         this.scoreLabel = this.add.bitmapText(10, 5, "pixelFont", "SCORE ", 16);
 
@@ -103,6 +106,7 @@ class Scene2 extends Phaser.Scene {
         });
         if (this.lives == 0) {
             UpdateScore(this.score);
+            this.scene.start("showScores");
         }
     }
     hitEnemy(projectile, enemy) {
@@ -191,6 +195,7 @@ class Scene2 extends Phaser.Scene {
     }
     logReset(event) {
         return this.resetPlayer
+        
     }
 
     form = document.getElementById('form');

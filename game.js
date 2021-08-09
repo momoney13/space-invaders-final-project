@@ -13,7 +13,7 @@ var config = {
     //     width: '100%',
     //     height: '100%'
     // },
-    scene: [Scene1, Scene2],
+    scene: [Scene1, Scene2, Scene3],
     pixelArt: true,
     physics:{
         default: "arcade",
