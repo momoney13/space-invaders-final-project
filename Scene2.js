@@ -190,7 +190,7 @@ class Scene2 extends Phaser.Scene {
         return stringNumber;
     }
     logReset(event) {
-        log.textContent = `Game reset! `;
+        return this.resetPlayer
     }
 
     form = document.getElementById('form');
